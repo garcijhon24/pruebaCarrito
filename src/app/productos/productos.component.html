@@ -1,0 +1,32 @@
+
+<br />
+<div class="row">
+  <div class="col-sm-9" >
+    <div class="card-columns">
+      <div class="card" *ngFor="let producto of agregarItem.productos;let i = index">
+        <img [src]="producto.imagen" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.titulo}}</h5>
+          <p class="card-text">
+            $ {{ producto.precio }}
+          </p>
+          <button class="btn btn-primary" (click)="agregarItem.agregar_item(producto,i)">Comprar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="col-sm-3 carrito">
+    <h4><i class="fa fa-shopping-cart"></i> Carrito de compras</h4>
+
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of agregarItem.items">
+        {{ item.titulo}}<strong class="pull-right">${{ item.precio}}</strong>
+      </li>
+      <li class="list-group-item">
+        Total: <strong class="pull-right">$ {{ agregarItem.sum }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of agregarItem.items;let i = index">
+    {{ item.titulo}}
+    <button class="badge badge-danger badge-pill" (click)="agregarItem.eliminar_item(i, item)">Eliminar</button>
+  </li>
+  
+</ul>
